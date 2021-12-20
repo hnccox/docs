@@ -1,52 +1,28 @@
 # Create
 
-{% api-method method="post" host="https://videodocker.io" path="/videos/" %}
-{% api-method-summary %}
-Create video
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://videodocker.io" path="/videos/" method="post" summary="Create video" %}
+{% swagger-description %}
 This endpoint allows you to create a new video.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
+{% swagger-parameter in="header" name="Authentication" type="string" %}
 Authentication token.
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="payload" type="object" required=false %}
+{% swagger-parameter in="body" name="payload" type="object" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Cake successfully retrieved." %}
 ```
 {    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=404 %}
-{% api-method-response-example-description %}
-Could not find a cake matching this query.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="404" description="Could not find a cake matching this query." %}
 ```
 {    "message": "Ain't no cake like that."}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
-
+{% endswagger-response %}
+{% endswagger %}
 
